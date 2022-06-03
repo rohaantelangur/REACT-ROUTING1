@@ -6,11 +6,15 @@ export const Product = () => {
   const { id } = useParams();
   console.log(id);
   const [showproduct, setshowproduct] = useState({});
+
   useEffect(() => {
-    axios.get(`http://localhost:8080/products/${id}`).then((r) => {
-      console.log(r);
-      setshowproduct(r.data);
-    });
+    if(id!=="not"){
+
+      axios.get(`http://localhost:8080/products/${id}`).then((r) => {
+        console.log(r);
+        setshowproduct(r.data);
+      });
+    }
   }, [id]);
 
   return (
