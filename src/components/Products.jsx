@@ -24,12 +24,12 @@ export const Products = () => {
   </thead>
   <tbody>
       {product.map((item)=>{return(
-        <tr>
+        <tr key={item.id}>
           <td>{item.id+1}</td>
           <td>{item.name}</td>
           <td>{item.price}</td>
           <td>
-        <Link to={"/products/"+item.id}>More Details</Link>
+        <Link to={"/product/"+item.id}>More Details</Link>
           </td>
         </tr>
       )})}
